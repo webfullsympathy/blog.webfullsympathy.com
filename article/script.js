@@ -1,8 +1,9 @@
+document.addEventListener("DOMContentLoaded",()=>{
 const url = new URL(location.href)
 const pageNumber =url.searchParams.get("p")
 
-function doc_close() {
-    document.getElementById("doc-view").style.display = "none"
+if(pageNumber === null){
+    location.href = "https://blog.webfullsympathy.com"
 }
 
 /* 記事画面
@@ -17,17 +18,27 @@ data_fetch()
 */
 
 function doc(){
+    // 記事内容
     fetch("https://raw.githubusercontent.com/webfullsympathy/blog.webfullsympathy.com/refs/heads/doc/" + pageNumber + "/main.md")
     .then(response => response.text())
     .then(data => {
-        document.getElementById("main").innerHTML = marked.parse(data) + "<br><button onclick='doc_close()' style='background-color: #1F2937;color: #ffffff;font-size: 140%;'>閉じる</button>";
+        document.getElementById("main").innerHTML = marked.parse(data);
         hljs.highlightAll()
 
-        document.getElementById("doc-view").style.display = "block";
-        document.getElementById("doc-view").style.border = "1px #eee solid";
-        document.getElementById("doc-view").style.borderradius = "1px #eee solid";
-        document.getElementById("doc-view").style.background = "#fff";
+        document.getElementById("main").style.display = "block";
+        document.getElementById("main").style.border = "1px #eee solid";
+        document.getElementById("main").style.borderRadius = "30px";
+        document.getElementById("main").style.background = "#fff";
+    })
+
+    fetch("https://raw.githubusercontent.com/webfullsympathy/blog.webfullsympathy.com/refs/heads/doc/" + pageNumber + "/set.txt")
+    .then(response => response.text())
+    .then(data => {
+        const data_list = data.split(/\n/)
+
+        document.title = data_list[0] + " | ウェブ完理ブログ"
     })
 }
 
 doc()
+})
