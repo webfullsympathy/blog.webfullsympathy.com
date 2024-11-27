@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("load",()=>{
 const url = new URL(location.href)
 const pageNumber =url.searchParams.get("p")
 
