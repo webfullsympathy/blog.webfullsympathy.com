@@ -12,7 +12,7 @@
     e.exports=n,e.exports.default=n;class t{constructor(e){
     void 0===e.data&&(e.data={}),this.data=e.data,this.isMatchIgnored=!1}
     ignoreMatch(){this.isMatchIgnored=!0}}function a(e){
-    return e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#x27;")
+    return String(e).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#x27;")
     }function i(e,...n){const t=Object.create(null);for(const n in e)t[n]=e[n]
     ;return n.forEach((e=>{for(const n in e)t[n]=e[n]})),t}
     const r=e=>!!e.scope||e.sublanguage&&e.language;class s{constructor(e,n){
