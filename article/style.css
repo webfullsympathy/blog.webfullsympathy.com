@@ -3,7 +3,7 @@
         background-color: #ffffff;
     }
 
-    h1{
+    #penname{
         color: #000000;
     }
 }
@@ -12,7 +12,7 @@
         background-color: #1b1b1b;
     }
 
-    h1{
+    #penname{
         color: #ffffff;
     }
 }
@@ -23,4 +23,12 @@ body{
 
 #profileimg{
     border-radius: 100%;
+}
+
+pre span.filename {
+    color: #000000;
+    background-color: #eeede7;
+    padding: 2px 8px;
+    display: block;
+    overflow: hidden;
 }
