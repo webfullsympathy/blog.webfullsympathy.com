@@ -1,6 +1,6 @@
 function data_fetch() {
     try{
-    fetch("https://raw.githubusercontent.com/webfullsympathy/sharetool-doc/refs/heads/doc/all.html")
+    fetch("https://raw.githubusercontent.com/webfullsympathy/blog.webfullsympathy.com/refs/heads/doc/all.html")
     .then(response => response.text())
     .then(data => {
         if(data === "404: Not Found"){
