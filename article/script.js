@@ -21,15 +21,6 @@ if(pageNumber === null){
 
 function doc(){
     try{
-    // 記事詳細
-    fetch("https://raw.githubusercontent.com/webfullsympathy/blog.webfullsympathy.com/refs/heads/doc/" + pageNumber + "/set.txt")
-    .then(response => response.text())
-    .then(data => {
-        const data_list = data.split(/\n/)
-
-        document.title = data_list[0] + " | ウェブ完理ブログ"
-    })
-
     // 記事内容
     fetch("https://raw.githubusercontent.com/webfullsympathy/blog.webfullsympathy.com/refs/heads/doc/" + pageNumber + "/main.md")
     .then(response => response.text())

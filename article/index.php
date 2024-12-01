@@ -6,6 +6,30 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/vnd.microsoft.icon" href="https://webfullsympathy.com/profile.jpg">
 
+    <title>
+        <!--PHPでタイトルを設定-->
+        <?php
+        if (isset($_GET["p"])) {
+            $url = "https://raw.githubusercontent.com/webfullsympathy/blog.webfullsympathy.com/refs/heads/doc/" . $_GET["p"] . "/set.txt";
+            $contents = file_get_contents($url);
+
+            if ($contents !== false) {
+                $lines = explode(PHP_EOL, $contents);
+    
+                if (isset($lines[0])) {
+                    echo $lines[0] . " | ウェブ完理ブログ";
+                } else {
+                    echo "404 Not Found | ウェブ完理ブログ";
+                }
+            } else {
+                echo "404 Not Found | ウェブ完理ブログ";
+            }
+        } else {
+            echo "404 Not Found | ウェブ完理ブログ";
+        }
+        ?>
+    </title>
+
     <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked-highlight/lib/index.umd.js"></script>
 
