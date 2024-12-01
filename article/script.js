@@ -28,14 +28,21 @@ function doc(){
         if(data === "404: Not Found"){
             document.getElementById("main").innerHTML = "<h1>お探しのページが見つかりませんでした。</h1><br><a href='https://blog.webfullsympathy.com'><p>ホームに戻る</p></a>"
 
+            document.getElementById("main").style.display = "block"
             document.getElementById("main").style.margin = "0 auto"
             document.getElementById("main").style.border = "1px #eee solid"
             document.getElementById("main").style.borderRadius = "30px"
             document.getElementById("main").style.background = "#fff"
             document.getElementById("main").style.width = "80%"
         }else{
-            document.getElementById("main").innerHTML = marked.parse(data) + 
-            "<br><a href='https://share-tool.net?text=" + document.title + " - " + location.href + "' target='_blank'><img src='https://share-tool.net/src/share.jpg' style='border-radius: 100%;width: 200px'></a>"
+            document.getElementById("main").innerHTML = marked.parse(data) + "<br><a href='https://share-tool.net?text=" + document.title + " - " + location.href + "' target='_blank'><img src='https://share-tool.net/src/share.jpg' style='border-radius: 100%;width: 200px'></a>"
+
+            document.getElementById("main").style.display = "block"
+            document.getElementById("main").style.margin = "0 auto"
+            document.getElementById("main").style.border = "1px #eee solid"
+            document.getElementById("main").style.borderRadius = "30px"
+            document.getElementById("main").style.background = "#fff"
+            document.getElementById("main").style.width = "80%"
         }
     })
     }
