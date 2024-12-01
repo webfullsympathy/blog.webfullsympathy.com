@@ -5,6 +5,7 @@
 
     #penname{
         color: #000000;
+        text-decoration: none;
     }
 }
 @media (prefers-color-scheme: dark) {
@@ -14,6 +15,7 @@
 
     #penname{
         color: #ffffff;
+        text-decoration: none;
     }
 }
 
@@ -34,7 +36,6 @@ pre span.filename {
 }
 
 a{
-    text-decoration: none;
     color: #000000;
     height: 100%;
 }
