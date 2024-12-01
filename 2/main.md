@@ -6,11 +6,11 @@
 てな感じです。
 メインPC(Win11)からSSH出来ればいいです。
 # 必要な物
-- PC(Winオススメ)
-- RasberryPi
-- SDカード
-- 電源
-- やる気
+・PC(Winオススメ)
+・RasberryPi
+・SDカード
+・電源
+・やる気
 # 準備
 まずWindowsで[公式イメージャー](https://raspberrypi.com/software)を使ってRaspberryPi OSを書き込みます。ちなみに私の準備したSDカードはクソ早32GBです。(少なっ)
 書き込み時間は私のPCで数十分でした。(測れやボケ)
