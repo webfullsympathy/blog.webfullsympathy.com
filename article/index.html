@@ -6,30 +6,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/vnd.microsoft.icon" href="https://webfullsympathy.com/profile.jpg">
 
-    <title>
-        <!--PHPでタイトルを設定-->
-        <?php
-        if (isset($_GET["p"])) {
-            $url = "https://raw.githubusercontent.com/webfullsympathy/blog.webfullsympathy.com/refs/heads/doc/" . $_GET["p"] . "/set.txt";
-            $contents = file_get_contents($url);
-
-            if ($contents !== false) {
-                $lines = explode(PHP_EOL, $contents);
-    
-                if (isset($lines[0])) {
-                    echo $lines[0] . " | ウェブ完理ブログ";
-                } else {
-                    echo "404 Not Found | ウェブ完理ブログ";
-                }
-            } else {
-                echo "404 Not Found | ウェブ完理ブログ";
-            }
-        } else {
-            echo "404 Not Found | ウェブ完理ブログ";
-        }
-        ?>
-    </title>
-
     <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked-highlight/lib/index.umd.js"></script>
 
@@ -41,9 +17,26 @@
     <meta http-equiv="Expires" content="0">
 </head>
 <body>
+    <header>
+        <h1 class="title">ウェブ完理ブログ</h1>
+        <nav>
+            <ul>
+                <li class="menu-item"><a href="https://webfullsympathy.com">Profile</a></li>
+                <li class="menu-item"><a href="https://link.webfullsympathy.com">Link</a></li>
+                <li class="menu-item"><a href="https://youtube.com/@webfullsympathy">Video</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <a href="https://webfullsympathy.com" style="width: 300px;">
     <img src="https://webfullsympathy.com/profile.jpg" id="profileimg">
     <h1 id="penname">ウェブ完理</h1>
-    <div id="main" style="display: none;"></div>
+    </a>
+
+    <div id="main">
+        <img src="https://blog.webfullsympathy.com/src/load.gif" style="width: 10rem;">
+        <h1>Loading...</h1>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
